@@ -1,15 +1,15 @@
 import Head from "next/head"
 import Layout from "../components/Layout"
 
-const Home = () => {
+const Projects = () => {
   return (
     <Layout>
       <Head>
-        <title>Eric Hartline - Web Developer</title>
+        <title>Projects - Eric Hartline</title>
       </Head>
-      this is my homepage
+      <div>projects go here</div>
     </Layout>
   )
 }
 
-export default Home
+export default Projects
