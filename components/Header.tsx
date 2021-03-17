@@ -9,6 +9,7 @@ const Header = () => {
             <span className="text-xl">Eric Hartline</span>
           </a>
         </Link>
+        {/* move links to left and add socials to end */}
         <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
           <Link href="/blog">
             <a className="mr-5 hover:text-gray-900">Blog</a>
