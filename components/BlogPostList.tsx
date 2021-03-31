@@ -11,21 +11,51 @@ type Props = {
 }
 
 const BlogPostList = ({ posts }: Props) => {
+  const sortedPosts = posts.sort((a, b) =>
+    b.frontmatter.date.localeCompare(a.frontmatter.date),
+  )
+
   return (
-    <div>
+    <section className="text-gray-600 body-font overflow-hidden">
       <ul>
-        {posts &&
-          posts.map((post) => {
-            return (
-              <li key={post.slug}>
-                <Link href={{ pathname: `/blog/${post.slug}` }}>
-                  <a>{post.frontmatter.title}</a>
-                </Link>
-              </li>
-            )
-          })}
+        {sortedPosts.map((post) => {
+          const { frontmatter } = post
+
+          return (
+            <li key={post.slug}>
+              <div className="py-4">
+                {/* add borders between stacked children */}
+                <div className="-my-8 divide-y-2 divide-gray-100">
+                  <div className="py-8 flex flex-wrap md:flex-nowrap">
+                    <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+                      <span className="font-semibold title-font text-green-700">
+                        {frontmatter.category.toUpperCase()}
+                      </span>
+                      <span className="mt-1 text-gray-500 text-sm">
+                        {frontmatter.date}
+                      </span>
+                    </div>
+                    <div className="md:flex-grow">
+                      <h2 className="text-2xl font-medium text-gray-900 title-font mb-2">
+                        {frontmatter.title}
+                      </h2>
+                      <p className="leading-relaxed">
+                        {frontmatter.description}
+                      </p>
+                      <Link href={{ pathname: `/blog/${post.slug}` }}>
+                        <a className="text-blue-600 inline-flex items-center mt-4">
+                          Read
+                        </a>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          )
+        })}
       </ul>
-    </div>
+    </section>
   )
 }
 

@@ -15,6 +15,7 @@ const Blog = ({ posts }: Props) => {
       <Head>
         <title>Blog - Eric Hartline</title>
       </Head>
+      <h1 className="text-center text-4xl mb-4">Blog Posts</h1>
       <BlogPostList posts={posts} />
     </Layout>
   )
