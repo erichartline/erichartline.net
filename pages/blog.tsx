@@ -1,7 +1,7 @@
 import Head from "next/head"
 import matter from "gray-matter"
 import Layout from "@components/Layout"
-import BlogPosts from "@components/BlogPosts"
+import BlogPostList from "@components/BlogPostList"
 import { Post } from "../types/blog"
 
 type Props = {
@@ -15,7 +15,7 @@ const Blog = ({ posts }: Props) => {
       <Head>
         <title>Blog - Eric Hartline</title>
       </Head>
-      <BlogPosts posts={posts} />
+      <BlogPostList posts={posts} />
     </Layout>
   )
 }

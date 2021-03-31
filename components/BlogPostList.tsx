@@ -10,7 +10,7 @@ type Props = {
   }>
 }
 
-const BlogPosts = ({ posts }: Props) => {
+const BlogPostList = ({ posts }: Props) => {
   return (
     <div>
       <ul>
@@ -29,4 +29,4 @@ const BlogPosts = ({ posts }: Props) => {
   )
 }
 
-export default BlogPosts
+export default BlogPostList
