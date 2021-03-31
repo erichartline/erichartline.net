@@ -1,18 +1,18 @@
 import Link from "next/link"
+import { Frontmatter } from "../types/blog"
 
 type Props = {
   posts: Array<{
+    /** URL slug */
     slug: string
-    frontmatter: {
-      title: string
-    }
+    /** Frontmatter from Markdown file */
+    frontmatter: Frontmatter
   }>
 }
 
 const BlogPosts = ({ posts }: Props) => {
   return (
     <div>
-      {!posts && <div>No posts!</div>}
       <ul>
         {posts &&
           posts.map((post) => {

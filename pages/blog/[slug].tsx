@@ -2,11 +2,24 @@ import React from "react"
 import Link from "next/link"
 import matter from "gray-matter"
 import ReactMarkdown from "react-markdown"
-import Layout from "../../components/Layout"
-import getSlugs from "../../lib/getSlugs"
+import Layout from "@components/Layout"
+import getSlugs from "@lib/getSlugs"
+import { GetStaticProps, GetStaticPaths } from "next"
+import { Frontmatter } from "../../types/blog"
 
-const BlogPost = ({ siteTitle, frontmatter, markdownBody }) => {
+type Props = {
+  /** Page title for SEO purposes */
+  siteTitle: string
+  /** Frontmatter found in markdown documents */
+  frontmatter?: Frontmatter
+  /** Content of markdown files */
+  markdownBody: string
+}
+
+const BlogPost = ({ siteTitle, frontmatter, markdownBody }: Props) => {
   if (!frontmatter) return <React.Fragment />
+
+  const { title, date } = frontmatter
 
   return (
     <Layout pageTitle={`${siteTitle} | ${frontmatter.title}`}>
@@ -14,8 +27,8 @@ const BlogPost = ({ siteTitle, frontmatter, markdownBody }) => {
         <a>Back to post list</a>
       </Link>
       <article>
-        <h1>{frontmatter.title}</h1>
-        <p>{frontmatter.date}</p>
+        <h1>{title}</h1>
+        <p>{date}</p>
         <div>
           <ReactMarkdown source={markdownBody} />
         </div>
@@ -24,8 +37,9 @@ const BlogPost = ({ siteTitle, frontmatter, markdownBody }) => {
   )
 }
 
-const getStaticProps = async ({ ...ctx }) => {
-  const { slug } = ctx.params
+// get markdown file matching slug and return its data as props
+const getStaticProps: GetStaticProps = async (context) => {
+  const { slug } = context.params
 
   const content = await import(`../../posts/${slug}.md`)
   const data = matter(content.default)
@@ -38,7 +52,9 @@ const getStaticProps = async ({ ...ctx }) => {
   }
 }
 
-const getStaticPaths = async () => {
+// get list of paths to render to HTML at build time
+const getStaticPaths: GetStaticPaths = async () => {
+  // get list of slugs for markdown posts
   const blogSlugs = ((context) => {
     return getSlugs(context)
   })(require.context("../../posts", true, /\.md$/))
@@ -47,7 +63,7 @@ const getStaticPaths = async () => {
 
   return {
     paths,
-    fallback: false,
+    fallback: false, // returns 404 page if path not found
   }
 }
 
