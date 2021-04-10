@@ -1,4 +1,5 @@
 import Link from "next/link"
+import NowPlaying from "./NowPlaying"
 
 const links = [
   {
@@ -17,8 +18,8 @@ const links = [
 
 const Footer = () => {
   return (
-    <footer className="text-gray-600 body-font my-4 text-center">
-      © {new Date().getFullYear()} Eric Hartline
+    <footer className="text-gray-600 my-4 text-center">
+      <div>© {new Date().getFullYear()} Eric Hartline</div>
       <div className="mt-2">
         {links.map((item) => (
           <Link key={item.name} href={item.url}>
@@ -26,6 +27,7 @@ const Footer = () => {
           </Link>
         ))}
       </div>
+      <NowPlaying />
     </footer>
   )
 }
