@@ -1,5 +1,6 @@
 import Link from "next/link"
-import { FaArrowRight, FaReact } from "react-icons/fa"
+import { FaArrowRight } from "react-icons/fa"
+import ProjectIcon from "./ProjectIcon"
 
 type Props = {
   project: {
@@ -8,14 +9,15 @@ type Props = {
     description: string
     link: string
   }
+  index: number
 }
 
-const ProjectItem = ({ project }: Props) => {
+const ProjectItem = ({ project, index }: Props) => {
+  const evenNumber = index % 2 === 0
+
   return (
     <div className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
-      <div className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0">
-        {project.icon === "react" && <FaReact size="5em" color="#61DAFB" />}
-      </div>
+      {evenNumber && <ProjectIcon icon={project.icon} />}
       <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
         <h2 className="text-gray-900 text-lg title-font font-medium mb-2">
           {project.title}
@@ -27,6 +29,7 @@ const ProjectItem = ({ project }: Props) => {
           </a>
         </Link>
       </div>
+      {!evenNumber && <ProjectIcon icon={project.icon} />}
     </div>
   )
 }

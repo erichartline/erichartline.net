@@ -86,16 +86,16 @@ const Projects = () => {
       <h1 className="text-center text-3xl mb-3">Professional Projects</h1>
       <section className="text-gray-600 body-font">
         <div className="container py-8 mx-auto">
-          {professional.map((item) => (
-            <ProjectItem key={item.title} project={item} />
+          {professional.map((item, index) => (
+            <ProjectItem key={item.title} project={item} index={index} />
           ))}{" "}
         </div>
       </section>
       <h1 className="text-center text-3xl mb-3">Side Projects</h1>
       <section className="text-gray-600 body-font">
         <div className="container py-8 mx-auto">
-          {side.map((item) => (
-            <ProjectItem key={item.title} project={item} />
+          {side.map((item, index) => (
+            <ProjectItem key={item.title} project={item} index={index} />
           ))}{" "}
         </div>
       </section>
