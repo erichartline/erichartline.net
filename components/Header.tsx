@@ -1,5 +1,20 @@
 import Link from "next/link"
 
+const links = [
+  {
+    url: "/about",
+    text: "About",
+  },
+  {
+    url: "/blog",
+    text: "Blog",
+  },
+  {
+    url: "/projects",
+    text: "Projects",
+  },
+]
+
 const Header = () => {
   return (
     <header className="text-gray-600 body-font">
@@ -9,17 +24,12 @@ const Header = () => {
             <span className="text-xl">Eric Hartline</span>
           </a>
         </Link>
-        {/* move links to left and add socials to end */}
         <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-          <Link href="/blog">
-            <a className="mr-5 hover:text-gray-900">Blog</a>
-          </Link>
-          <Link href="/about">
-            <a className="mr-5 hover:text-gray-900">About</a>
-          </Link>
-          <Link href="/projects">
-            <a className="mr-5 hover:text-gray-900">Projects</a>
-          </Link>
+          {links.map((link) => (
+            <Link key={link.text} href={link.url}>
+              <a className="mr-5 hover:text-gray-900">{link.text}</a>
+            </Link>
+          ))}
         </nav>
       </div>
     </header>
