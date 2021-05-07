@@ -6,7 +6,7 @@ tags:
   - "recap"
   - "work"
   - "professional"
-description: "2020. Yeah."
+description: "2020. Yeah, it was a year alright."
 ---
 
 It's a little comical that I am just now writing my 2020 year in review post, but then again, who really wants to look back at 2020? Even though the year itself was pretty awful, I did get to build and work on some cool things. Here's a quick rundown.

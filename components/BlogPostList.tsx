@@ -28,7 +28,7 @@ const BlogPostList = ({ posts }: Props) => {
                 <div className="-my-8 divide-y-2 divide-gray-100">
                   <div className="py-8 flex flex-wrap md:flex-nowrap">
                     <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-                      <span className="font-semibold title-font text-green-700">
+                      <span className="font-semibold title-font text-pink-600">
                         {frontmatter.category.toUpperCase()}
                       </span>
                       <span className="mt-1 text-gray-500 text-sm">
@@ -37,13 +37,15 @@ const BlogPostList = ({ posts }: Props) => {
                     </div>
                     <div className="md:flex-grow">
                       <h2 className="text-2xl font-medium text-gray-900 title-font mb-2">
-                        {frontmatter.title}
+                        <Link href={{ pathname: `/blog/${post.slug}` }}>
+                          <a>{frontmatter.title}</a>
+                        </Link>
                       </h2>
                       <p className="leading-relaxed">
                         {frontmatter.description}
                       </p>
                       <Link href={{ pathname: `/blog/${post.slug}` }}>
-                        <a className="text-blue-600 inline-flex items-center mt-4">
+                        <a className="text-blue-500 inline-flex items-center mt-4">
                           Read
                         </a>
                       </Link>

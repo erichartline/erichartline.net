@@ -8,31 +8,37 @@ import { GetStaticProps, GetStaticPaths } from "next"
 import { Frontmatter } from "../../types/blog"
 
 type Props = {
-  /** Page title for SEO purposes */
-  siteTitle: string
   /** Frontmatter found in markdown documents */
   frontmatter?: Frontmatter
   /** Content of markdown files */
   markdownBody: string
 }
 
-const BlogPost = ({ siteTitle, frontmatter, markdownBody }: Props) => {
+const BlogPost = ({ frontmatter, markdownBody }: Props) => {
   if (!frontmatter) return <React.Fragment />
 
   const { title, date } = frontmatter
 
   return (
-    <Layout pageTitle={`${siteTitle} | ${frontmatter.title}`}>
-      <Link href="/">
-        <a>Back to post list</a>
-      </Link>
+    <Layout pageTitle={`${frontmatter.title}`}>
       <article>
-        <h1>{title}</h1>
-        <p>{date}</p>
+        <h1 className="text-center text-3xl mb-3">{title}</h1>
+        <p className="text-center text-lg mb-3">
+          <em>{date}</em>
+        </p>
         <div>
-          <ReactMarkdown source={markdownBody} />
+          <ReactMarkdown className="prose lg:prose-xl prose-pink mx-auto">
+            {markdownBody}
+          </ReactMarkdown>
         </div>
       </article>
+      <div className="text-center mt-2">
+        <Link href="/blog">
+          <a className="text-green-700 hover:text-green-500">
+            &larr; Back to post list
+          </a>
+        </Link>
+      </div>
     </Layout>
   )
 }
