@@ -1,4 +1,3 @@
-import Head from "next/head"
 import Layout from "../components/Layout"
 import ProjectItem from "../components/ProjectItem"
 
@@ -79,10 +78,7 @@ const side = [
 
 const Projects = () => {
   return (
-    <Layout>
-      <Head>
-        <title>Projects - Eric Hartline</title>
-      </Head>
+    <Layout pageTitle="Projects - Eric Hartline">
       <h1 className="text-center text-3xl mb-3">Professional Projects</h1>
       <section className="text-gray-600 body-font">
         <div className="container py-8 mx-auto">

@@ -8,18 +8,22 @@ const About = () => {
       <Head>
         <title>About - Eric Hartline</title>
       </Head>
-      <div className="mx-16">
-        <h1 className="text-4xl">About Me</h1>
+      <div>
+        <h1 className="text-4xl text-center">About Me</h1>
         <div className="pt-1">
-          <Image
-            src="/images/eric-cropped.jpeg"
-            alt="Photo of Eric Hartline"
-            width={650}
-            height={420}
-          />
-          <p>
-            Photo by <a href="https://www.tuanhbui.com/">Tuan H. Bui</a>
-          </p>
+          <div className="text-center">
+            <Image
+              src="/images/eric-cropped.jpeg"
+              alt="Photo of Eric Hartline"
+              width={550}
+              height={370}
+            />
+            <p>
+              <em>
+                Photo by <a href="https://www.tuanhbui.com/">Tuan H. Bui</a>
+              </em>
+            </p>
+          </div>
           <p className="my-4">
             I've been working professionally as a web developer since 2017, but
             it was a long and winding road to get to that point. When I was
@@ -29,12 +33,16 @@ const About = () => {
             from Chip's Challenge to Wolfenstein 3D. I started to get curious as
             to how video games were made and ended up buying my first
             programming book --{" "}
-            <a href="https://books.google.com/books/about/Teach_Yourself_QBasic_in_21_Days.html">
+            <a
+              className="text-red-500"
+              href="https://books.google.com/books/about/Teach_Yourself_QBasic_in_21_Days.html">
               Teach Yourself QBasic in 21 Days
             </a>
             . I wrote a few small programs, one of which was a Mad Libs game
             (rather amazingly, I found a{" "}
-            <a href="http://www.petesqbsite.com/reviews/misc/madlibs.html">
+            <a
+              className="text-red-500"
+              href="http://www.petesqbsite.com/reviews/misc/madlibs.html">
               copy of my game online
             </a>
             , complete with an accompanying review that tears it to shreds).

@@ -1,4 +1,3 @@
-import Head from "next/head"
 import matter from "gray-matter"
 import Layout from "@components/Layout"
 import BlogPostList from "@components/BlogPostList"
@@ -11,12 +10,11 @@ type Props = {
 
 const Blog = ({ posts }: Props) => {
   return (
-    <Layout>
-      <Head>
-        <title>Blog - Eric Hartline</title>
-      </Head>
-      <h1 className="text-center text-4xl mb-4">Blog Posts</h1>
-      <BlogPostList posts={posts} />
+    <Layout pageTitle="Blog - Eric Hartline">
+      <div className="mx-auto">
+        <h1 className="text-center text-4xl mb-4">Blog Posts</h1>
+        <BlogPostList posts={posts} />
+      </div>
     </Layout>
   )
 }

@@ -18,7 +18,7 @@ const Layout = ({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{pageTitle}</title>
       </Head>
-      <div className="container w-3/4">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0">
         <Header />
         <main className="p-5">{children}</main>
         <Footer />
