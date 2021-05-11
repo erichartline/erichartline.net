@@ -45,8 +45,8 @@ const BlogPostList = ({ posts }: Props) => {
                         {frontmatter.description}
                       </p>
                       <Link href={{ pathname: `/blog/${post.slug}` }}>
-                        <a className="text-blue-500 inline-flex items-center mt-4">
-                          Read
+                        <a className="text-pink-500 inline-flex items-center mt-4">
+                          Read &rarr;
                         </a>
                       </Link>
                     </div>

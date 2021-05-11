@@ -1,5 +1,5 @@
-import Layout from "../components/Layout"
-import ProjectItem from "../components/ProjectItem"
+import Layout from "@components/Layout"
+import ProjectItem from "@components/ProjectItem"
 
 const professional = [
   {

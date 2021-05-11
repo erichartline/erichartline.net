@@ -11,10 +11,15 @@ type Props = {
 const Blog = ({ posts }: Props) => {
   return (
     <Layout pageTitle="Blog - Eric Hartline">
-      <div className="mx-auto">
-        <h1 className="text-center text-4xl mb-4">Blog Posts</h1>
-        <BlogPostList posts={posts} />
+      <div className="pt-6 pb-8 space-y-2 md:space-y-5">
+        <h1 className="text-3xl leading-9 text-gray-900 tracking-tight sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+          Blog Posts
+        </h1>
+        <p className="text-lg leading-7 text-gray-500">
+          Sporadic writings about my coding endeavors
+        </p>
       </div>
+      <BlogPostList posts={posts} />
     </Layout>
   )
 }
