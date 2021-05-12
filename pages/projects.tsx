@@ -1,4 +1,5 @@
 import Layout from "@components/Layout"
+import PageHeader from "@components/PageHeader"
 import ProjectItem from "@components/ProjectItem"
 
 const professional = [
@@ -79,7 +80,11 @@ const side = [
 const Projects = () => {
   return (
     <Layout pageTitle="Projects - Eric Hartline">
-      <h1 className="text-center text-3xl mb-3">Professional Projects</h1>
+      <PageHeader
+        title="Projects"
+        subtitle="Select projects I've worked on in the last few years."
+      />
+      <h2 className="text-3xl mb-3 text-gray-600">Professional</h2>
       <section className="text-gray-600 body-font">
         <div className="container py-8 mx-auto">
           {professional.map((item, index) => (
@@ -87,7 +92,7 @@ const Projects = () => {
           ))}{" "}
         </div>
       </section>
-      <h1 className="text-center text-3xl mb-3">Side Projects</h1>
+      <h2 className="text-3xl mb-3 text-gray-600">Side Projects</h2>
       <section className="text-gray-600 body-font">
         <div className="container py-8 mx-auto">
           {side.map((item, index) => (
