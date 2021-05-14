@@ -3,7 +3,7 @@ import SocialIcons from "./SocialIcons"
 
 const Footer = () => {
   return (
-    <footer className="text-gray-600 my-4 text-center">
+    <footer className="text-gray-600 my-4 text-center text-lg">
       <div>© {new Date().getFullYear()} Eric Hartline</div>
       <SocialIcons />
       {/* <NowPlaying /> */}
