@@ -27,14 +27,14 @@ const BlogPost = ({ frontmatter, markdownBody }: Props) => {
           <em>{date}</em>
         </p>
         <div>
-          <ReactMarkdown className="prose lg:prose-xl prose-pink mx-auto">
+          <ReactMarkdown className="prose lg:prose-xl prose-red mx-auto">
             {markdownBody}
           </ReactMarkdown>
         </div>
       </article>
       <div className="text-center mt-2">
         <Link href="/blog">
-          <a className="text-green-700 hover:text-green-500">
+          <a className="text-red-500 hover:text-red-700">
             &larr; Back to post list
           </a>
         </Link>

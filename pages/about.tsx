@@ -41,14 +41,14 @@ const About = () => {
             to how video games were made and ended up buying my first
             programming book --{" "}
             <a
-              className="text-red-500"
+              className="text-red-500 hover:text-red-700"
               href="https://books.google.com/books/about/Teach_Yourself_QBasic_in_21_Days.html?id=k4WFaB6AtBYC">
               Teach Yourself QBasic in 21 Days
             </a>
             . I wrote a few small programs, one of which was a Mad Libs game
             (rather amazingly, I found a{" "}
             <a
-              className="text-red-500"
+              className="text-red-500 hover:text-red-700"
               href="http://www.petesqbsite.com/reviews/misc/madlibs.html">
               copy of my game online
             </a>
@@ -69,11 +69,15 @@ const About = () => {
             post-college, I was getting the web dev itch again. I built some
             Wordpress and static HTML/CSS websites for local businesses, then
             discovered{" "}
-            <a className="text-red-500" href="https://www.freecodecamp.org/">
+            <a
+              className="text-red-500 hover:text-red-700"
+              href="https://www.freecodecamp.org/">
               freeCodeCamp
             </a>{" "}
             and started working my way through its curriculum. I also joined the{" "}
-            <a className="text-red-500" href="https://chingu.io/">
+            <a
+              className="text-red-500 hover:text-red-700"
+              href="https://chingu.io/">
               Chingu
             </a>{" "}
             dev community and worked on a couple of team projects to get some

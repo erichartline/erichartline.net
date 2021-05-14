@@ -28,7 +28,7 @@ const BlogPostList = ({ posts }: Props) => {
                 <div className="-my-8 divide-y-2 divide-gray-100">
                   <div className="py-8 flex flex-wrap md:flex-nowrap">
                     <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-                      <span className="font-semibold title-font text-pink-600">
+                      <span className="font-semibold title-font text-red-600">
                         {frontmatter.category.toUpperCase()}
                       </span>
                       <span className="mt-1 text-gray-500 text-sm">
@@ -45,7 +45,7 @@ const BlogPostList = ({ posts }: Props) => {
                         {frontmatter.description}
                       </p>
                       <Link href={{ pathname: `/blog/${post.slug}` }}>
-                        <a className="text-pink-500 inline-flex items-center mt-4">
+                        <a className="text-red-500 hover:text-red-700 inline-flex items-center mt-4">
                           Read &rarr;
                         </a>
                       </Link>

@@ -24,7 +24,7 @@ const ProjectItem = ({ project, index }: Props) => {
         </h2>
         <p className="leading-relaxed text-base">{project.description}</p>
         <Link href={project.link}>
-          <a className="mt-3 text-red-600 inline-flex items-center">
+          <a className="mt-3 text-red-600 hover:text-red-700 inline-flex items-center">
             View Code <FaArrowRight className="ml-1" />
           </a>
         </Link>

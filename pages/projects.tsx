@@ -85,6 +85,7 @@ const Projects = () => {
         subtitle="Select projects I've worked on in the last few years."
       />
       <h2 className="text-3xl mb-3 text-gray-600">Professional</h2>
+      <hr className="border-0 bg-gray-400 h-px" />
       <section className="text-gray-600 body-font">
         <div className="container py-8 mx-auto">
           {professional.map((item, index) => (
@@ -93,6 +94,7 @@ const Projects = () => {
         </div>
       </section>
       <h2 className="text-3xl mb-3 text-gray-600">Side Projects</h2>
+      <hr className="border-0 bg-gray-400 h-px" />
       <section className="text-gray-600 body-font">
         <div className="container py-8 mx-auto">
           {side.map((item, index) => (
