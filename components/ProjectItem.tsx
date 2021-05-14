@@ -7,6 +7,7 @@ type Props = {
     icon: string
     title: string
     description: string
+    tools?: string
     link: string
   }
   index: number
@@ -23,6 +24,11 @@ const ProjectItem = ({ project, index }: Props) => {
           {project.title}
         </h2>
         <p className="leading-relaxed text-base">{project.description}</p>
+        {project.tools && (
+          <p className="mt-2">
+            Uses: <em>{project.tools}</em>
+          </p>
+        )}
         <Link href={project.link}>
           <a className="mt-3 text-red-600 hover:text-red-700 inline-flex items-center">
             View Code <FaArrowRight className="ml-1" />
