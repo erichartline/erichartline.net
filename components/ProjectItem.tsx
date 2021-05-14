@@ -17,7 +17,7 @@ const ProjectItem = ({ project, index }: Props) => {
 
   return (
     <div className="flex items-center border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
-      {evenNumber && <ProjectIcon icon={project.icon} color="red-100" />}
+      {evenNumber && <ProjectIcon icon={project.icon} color="gray-100" />}
       <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
         <h2 className="text-gray-900 text-lg title-font font-medium mb-2">
           {project.title}
@@ -29,7 +29,7 @@ const ProjectItem = ({ project, index }: Props) => {
           </a>
         </Link>
       </div>
-      {!evenNumber && <ProjectIcon icon={project.icon} color="red-100" />}
+      {!evenNumber && <ProjectIcon icon={project.icon} color="gray-100" />}
     </div>
   )
 }
