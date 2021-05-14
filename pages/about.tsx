@@ -23,9 +23,14 @@ const About = () => {
           />
           <p className="pl-1">
             <em>
-              Photo by <a href="https://www.tuanhbui.com/">Tuan H. Bui</a>
+              Photo by{" "}
+              <a className="text-red-500" href="https://www.tuanhbui.com/">
+                Tuan H. Bui
+              </a>
             </em>
           </p>
+          <h2 className="mt-8 text-xl">My Background</h2>
+          <hr className="border-0 bg-gray-400 h-px" />
           <p className="my-4">
             I've been working professionally as a web developer since 2017, but
             it was a long and winding road to get to that point. When I was
@@ -77,11 +82,13 @@ const About = () => {
             hired full-time as an associate developer just three months later.
           </p>
           <h2 className="mt-4 text-xl">Tech Skills</h2>
-          <p>
+          <hr className="border-0 bg-gray-400 h-px" />
+          <p className="my-4">
             <em>React, GraphQL, Go, Node.js, Docker, Kubernetes</em>
           </p>
           <h2 className="mt-4 text-xl">Other Interests</h2>
-          <p>
+          <hr className="border-0 bg-gray-400 h-px" />
+          <p className="my-4">
             <em>Music, movies, video games, sports, traveling</em>
           </p>
         </div>
