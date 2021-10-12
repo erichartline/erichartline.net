@@ -1,5 +1,4 @@
 import Head from "next/head"
-import Image from "next/image"
 import Layout from "@components/Layout"
 import PageHeader from "@components/PageHeader"
 
@@ -15,21 +14,7 @@ const About = () => {
           subtitle="I'm Eric Hartline, web developer and fan of all things tech."
         />
         <div className="pt-1 w-4/5">
-          <Image
-            src="/images/eric-cropped.jpeg"
-            alt="Photo of Eric Hartline"
-            width={600}
-            height={400}
-          />
-          <p className="pl-1">
-            <em>
-              Photo by{" "}
-              <a className="text-red-500" href="https://www.tuanhbui.com/">
-                Tuan H. Bui
-              </a>
-            </em>
-          </p>
-          <h2 className="mt-8 text-xl">My Background</h2>
+          <h2 className="mt-4 text-xl">My Background</h2>
           <hr className="border-0 bg-gray-400 h-px" />
           <p className="my-4">
             I've been working professionally as a web developer since 2017, but
@@ -84,6 +69,10 @@ const About = () => {
             hands-on coding experience. Shortly after, I was brought on as a
             temporary web developer at Northwestern University before being
             hired full-time as an associate developer just three months later.
+          </p>
+          <p className="my-4">
+            Currently, I am working at Hireology as a front end software
+            engineer.
           </p>
           <h2 className="mt-4 text-xl">Tech Skills</h2>
           <hr className="border-0 bg-gray-400 h-px" />
