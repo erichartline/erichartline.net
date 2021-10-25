@@ -10,7 +10,7 @@ type Props = {
 
 const Layout = ({
   children,
-  pageTitle = "Eric Hartline - Web Developer",
+  pageTitle = "Eric Hartline - Frontend Software Engineer",
 }: Props) => {
   return (
     <React.Fragment>

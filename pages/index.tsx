@@ -9,7 +9,7 @@ type Props = {
   posts: Post[]
 }
 
-const Home = ({ posts }) => {
+const Home = ({ posts }: Props) => {
   return (
     <Layout>
       <div>

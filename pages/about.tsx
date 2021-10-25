@@ -13,7 +13,7 @@ const About = () => {
           title="About Me"
           subtitle="I'm Eric Hartline, web developer and fan of all things tech."
         />
-        <div className="pt-1 w-4/5">
+        <div>
           <h2 className="mt-4 text-xl">My Background</h2>
           <hr className="border-0 bg-gray-400 h-px" />
           <p className="my-4">
