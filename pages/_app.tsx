@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import Script from "next/script"
 import { useRouter } from "next/router"
+import { ThemeProvider } from "next-themes"
 import * as gtag from "@lib/gtag"
 import "tailwindcss/tailwind.css"
 
@@ -38,7 +39,9 @@ const MyApp = ({ Component, pageProps }) => {
           `,
         }}
       />
-      <Component {...pageProps} />
+      <ThemeProvider attribute="class">
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   )
 }

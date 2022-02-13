@@ -1,4 +1,6 @@
 import Link from "next/link"
+import { useTheme } from "next-themes"
+import { BsMoonFill, BsSunFill } from "react-icons/bs"
 
 const links = [
   {
@@ -16,6 +18,8 @@ const links = [
 ]
 
 const Header = () => {
+  const { theme, setTheme } = useTheme()
+
   return (
     <header className="text-gray-600 body-font">
       <div className="flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -30,6 +34,16 @@ const Header = () => {
               <a className="mr-5 hover:text-gray-900">{link.text}</a>
             </Link>
           ))}
+          <button
+            aria-label="Toggle Dark Mode"
+            type="button"
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+            {theme === "dark" ? (
+              <BsSunFill size="1em" />
+            ) : (
+              <BsMoonFill size="1em" />
+            )}
+          </button>
         </nav>
       </div>
     </header>
