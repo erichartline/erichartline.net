@@ -5,20 +5,16 @@ type Props = {
   posts: Array<{
     /** URL slug */
     slug: string
-    /** Frontmatter from Markdown file */
+    /** Frontmatter object from Markdown file */
     frontmatter: Frontmatter
   }>
 }
 
 const BlogPostList = ({ posts }: Props) => {
-  const sortedPosts = posts.sort((a, b) =>
-    b.frontmatter.date.localeCompare(a.frontmatter.date),
-  )
-
   return (
     <section className="text-gray-600 body-font overflow-hidden">
       <ul>
-        {sortedPosts.map((post) => {
+        {posts.map((post) => {
           const { frontmatter } = post
 
           return (

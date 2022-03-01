@@ -7,6 +7,7 @@ import "tailwindcss/tailwind.css"
 
 const MyApp = ({ Component, pageProps }) => {
   const router = useRouter()
+  // google analytics integration -- replace with self-hosted service someday?
   useEffect(() => {
     const handleRouteChange = (url) => {
       gtag.pageview(url)
