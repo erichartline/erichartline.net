@@ -31,7 +31,9 @@ const Header = () => {
         <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
           {links.map((link) => (
             <Link key={link.text} href={link.url}>
-              <a className="mr-5 hover:text-gray-900">{link.text}</a>
+              <a className="mr-5 hover:text-gray-900 hover:underline decoration-green">
+                {link.text}
+              </a>
             </Link>
           ))}
           <button
