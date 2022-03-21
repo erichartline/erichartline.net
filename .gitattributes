@@ -1,0 +1,6 @@
+.env.local filter=git-crypt diff=git-crypt
+.env.development.local filter=git-crypt diff=git-crypt
+.env.test.local filter=git-crypt diff=git-crypt
+.env.production.local filter=git-crypt diff=git-crypt
+
+.gitattributes !filter !diff
