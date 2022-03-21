@@ -1,11 +1,12 @@
 import React from "react"
+import { GetStaticProps, GetStaticPaths } from "next"
 import Link from "next/link"
 import matter from "gray-matter"
 import ReactMarkdown from "react-markdown"
 import Layout from "@components/Layout"
 import ProgressBar from "@components/ProgressBar"
 import getSlugs from "@lib/getSlugs"
-import { GetStaticProps, GetStaticPaths } from "next"
+import { getReadingTime } from "@lib/getReadingTime"
 import { Frontmatter } from "../../types/blog"
 
 type Props = {
@@ -19,6 +20,7 @@ const BlogPost = ({ frontmatter, markdownBody }: Props) => {
   if (!frontmatter) return <React.Fragment />
 
   const { title, date } = frontmatter
+  const readingTime = getReadingTime(markdownBody)
 
   return (
     <Layout pageTitle={`${frontmatter.title}`}>
@@ -26,8 +28,11 @@ const BlogPost = ({ frontmatter, markdownBody }: Props) => {
       <article>
         <h1 className="text-center text-3xl mb-3">{title}</h1>
         <p className="text-center text-lg mb-3">
-          <em>{date}</em>
+          <em>{date}</em> · {readingTime} min read
         </p>
+        <div className="py-4">
+          <div className="w-full border-t border-gray-300"></div>
+        </div>
         <div>
           <ReactMarkdown className="prose lg:prose-xl prose-red mx-auto">
             {markdownBody}
