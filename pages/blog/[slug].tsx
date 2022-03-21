@@ -3,6 +3,7 @@ import Link from "next/link"
 import matter from "gray-matter"
 import ReactMarkdown from "react-markdown"
 import Layout from "@components/Layout"
+import ProgressBar from "@components/ProgressBar"
 import getSlugs from "@lib/getSlugs"
 import { GetStaticProps, GetStaticPaths } from "next"
 import { Frontmatter } from "../../types/blog"
@@ -21,6 +22,7 @@ const BlogPost = ({ frontmatter, markdownBody }: Props) => {
 
   return (
     <Layout pageTitle={`${frontmatter.title}`}>
+      <ProgressBar />
       <article>
         <h1 className="text-center text-3xl mb-3">{title}</h1>
         <p className="text-center text-lg mb-3">
