@@ -1,50 +1,62 @@
 import Layout from "@components/Layout"
 import PageHeader from "@components/PageHeader"
-import ProjectItem from "@components/ProjectItem"
+import InfoCard from "@components/InfoCard"
+import Divider from "@components/Divider"
 
 const professional = [
   {
-    icon: "react",
-    title: "Dicty Stock Center",
+    badges: [
+      "react",
+      "graphql",
+      "material-ui",
+      "slatejs",
+      "formik",
+      "cypress",
+      "typescript",
+      "react-styleguidist",
+    ],
     description:
       "Full-featured shopping web application. Catalog pages were built using custom hooks for list virtualization and infinite scrolling. I also designed and implemented dynamic product pages, built a form with a streamlined ordering process and set up page editing capabilities for authorized users. The entire app is backed up by unit tests and Cypress end-to-end testing.",
-    tools:
-      "Apollo Client, Material-UI, Slatejs, Formik, Cypress, TypeScript, React Styleguidist",
     link: "https://github.com/dictyBase/dicty-stock-center",
+    title: "Dicty Stock Center",
   },
   {
-    icon: "react",
-    title: "dictyBase Homepage",
+    badges: [
+      "react",
+      "graphql",
+      "material-ui",
+      "slatejs",
+      "typescript",
+      "react-styleguidist",
+    ],
     description:
       "Web app to display main dictyBase content. This includes the homepage, information pages, widgets and downloads. The main feature is HTML5 page editing, as it uses a page editor I built using Slatejs. Authorized users are able to add and edit pages for any desired routes.",
-    tools:
-      "Apollo Client, Material-UI, Slatejs, TypeScript, React Styleguidist",
     link: "https://github.com/dictyBase/dicty-frontpage",
+    title: "dictyBase Frontpage",
   },
   {
-    icon: "react",
-    title: "Gene Page",
+    badges: ["react", "graphql", "material-ui", "typescript"],
     description:
       "Web app to display genomic information. This has a tab-based display where each tab contains panels that display unique information about genes and their annotations.",
-    tools: "Apollo Client, Material-UI, TypeScript",
     link: "https://github.com/dictyBase/genomepage",
+    title: "Gene Page",
   },
   {
-    icon: "react",
+    badges: ["react", "typescript"],
     title: "dicty-hooks",
     description:
       "Collection of React hooks used throughout dictyBase web applications. I wrote custom hooks for infinite scrolling, list virtualization, fetching data and for fetching refresh tokens.",
     link: "https://github.com/dictyBase/dicty-hooks",
   },
   {
-    icon: "react",
+    badges: ["slatejs", "typescript"],
     title: "Page Editor",
     description:
       "Reusable page editor built with Slatejs. It has full functionality, including basic markup, links, images, video embeds, lists, font color/size/family selections and tables. It can also convert pasted HTML directly into Slatejs content.",
     link: "https://github.com/dictyBase/dicty-components-page-editor",
   },
   {
-    icon: "go",
+    badges: ["go", "graphql", "gqlgen", "redis"],
     title: "GraphQL Server",
     description:
       "GraphQL server built using gqlgen. This is connected to several microservices with Redis caching and authorization middleware.",
@@ -52,7 +64,7 @@ const professional = [
     link: "https://github.com/dictyBase/graphql-server",
   },
   {
-    icon: "go",
+    badges: ["go", "grpc", "protocol buffer", "redis"],
     title: "Authorization Server",
     description:
       "gRPC service that acts as an authorization server for generating and validating JWTs.",
@@ -63,14 +75,14 @@ const professional = [
 
 const side = [
   {
-    icon: "react",
+    badges: ["nextjs", "tailwind", "typescript"],
     title: "Personal Website",
     description:
       "The very website you are reading right now. I wanted to create a simple but fun website to host my content. Next.js and Tailwind CSS had both caught my interest so this gave me a good reason to experiment with both.",
-    link: "https://github.com/wildlifehexagon/nextjs-portfolio",
+    link: "https://github.com/wildlifehexagon/erichartline.net",
   },
   {
-    icon: "nodejs",
+    badges: ["nodejs"],
     title: "World Cup 2018 CLI",
     description:
       "Node.js command line app for World Cup 2018 results and standings. I did this over a weekend to gain more experience building CLIs.",
@@ -85,22 +97,34 @@ const Projects = () => {
         title="Projects"
         subtitle="Select projects I've worked on in the last few years."
       />
-      <h2 className="text-3xl mb-3 text-gray-600">Professional</h2>
-      <hr className="border-0 bg-gray-400 h-px" />
-      <section className="text-gray-600 body-font">
-        <div className="container py-8 mx-auto">
-          {professional.map((item, index) => (
-            <ProjectItem key={item.title} project={item} index={index} />
-          ))}{" "}
+      <h2 className="text-3xl text-gray-600">Professional</h2>
+      <Divider />
+      <section className="text-gray-600 body-font mb-10">
+        <div className="p-2 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-5">
+          {professional.map((item) => (
+            <InfoCard
+              key={item.title}
+              badges={item.badges}
+              description={item.description}
+              link={item.link}
+              title={item.title}
+            />
+          ))}
         </div>
       </section>
-      <h2 className="text-3xl mb-3 text-gray-600">Side Projects</h2>
-      <hr className="border-0 bg-gray-400 h-px" />
+      <h2 className="text-3xl text-gray-600">Side Projects</h2>
+      <Divider />
       <section className="text-gray-600 body-font">
-        <div className="container py-8 mx-auto">
-          {side.map((item, index) => (
-            <ProjectItem key={item.title} project={item} index={index} />
-          ))}{" "}
+        <div className="p-2 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-5">
+          {side.map((item) => (
+            <InfoCard
+              key={item.title}
+              badges={item.badges}
+              description={item.description}
+              link={item.link}
+              title={item.title}
+            />
+          ))}
         </div>
       </section>
     </Layout>

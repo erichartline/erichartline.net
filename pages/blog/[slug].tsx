@@ -3,6 +3,7 @@ import { GetStaticProps, GetStaticPaths } from "next"
 import Link from "next/link"
 import matter from "gray-matter"
 import ReactMarkdown from "react-markdown"
+import Divider from "@components/Divider"
 import Layout from "@components/Layout"
 import ProgressBar from "@components/ProgressBar"
 import getSlugs from "@lib/getSlugs"
@@ -30,9 +31,7 @@ const BlogPost = ({ frontmatter, markdownBody }: Props) => {
         <p className="text-center text-lg mb-3">
           <em>{date}</em> · {readingTime} min read
         </p>
-        <div className="py-4">
-          <div className="w-full border-t border-gray-300"></div>
-        </div>
+        <Divider />
         <div>
           <ReactMarkdown className="prose lg:prose-xl prose-red mx-auto">
             {markdownBody}
