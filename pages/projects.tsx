@@ -16,7 +16,7 @@ const professional = [
       "react-styleguidist",
     ],
     description:
-      "Full-featured shopping web application. Catalog pages were built using custom hooks for list virtualization and infinite scrolling. I also designed and implemented dynamic product pages, built a form with a streamlined ordering process and set up page editing capabilities for authorized users. The entire app is backed up by unit tests and Cypress end-to-end testing.",
+      "Full-featured shopping web application. Catalog pages were built using custom hooks for list virtualization and infinite scrolling. I also designed and implemented dynamic product pages, built a form with a streamlined ordering process and set up page editing capabilities for authorized users. The entire app is backed up by unit tests using React Testing Library and end-to-end testing using Cypress.",
     link: "https://github.com/dictyBase/dicty-stock-center",
     title: "Dicty Stock Center",
   },
@@ -45,22 +45,21 @@ const professional = [
     badges: ["react", "typescript"],
     title: "dicty-hooks",
     description:
-      "Collection of React hooks used throughout dictyBase web applications. I wrote custom hooks for infinite scrolling, list virtualization, fetching data and for fetching refresh tokens.",
+      "Collection of custom React hooks used throughout dictyBase web applications. I wrote custom hooks for infinite scrolling, list virtualization, fetching data and for fetching refresh tokens.",
     link: "https://github.com/dictyBase/dicty-hooks",
   },
   {
     badges: ["slatejs", "typescript"],
     title: "Page Editor",
     description:
-      "Reusable page editor built with Slatejs. It has full functionality, including basic markup, links, images, video embeds, lists, font color/size/family selections and tables. It can also convert pasted HTML directly into Slatejs content.",
+      "Page editor library built with Slatejs. It has full functionality, including basic markup, links, images, video embeds, lists, font color/size/family selections and tables. It can also convert pasted HTML directly into Slatejs content.",
     link: "https://github.com/dictyBase/dicty-components-page-editor",
   },
   {
     badges: ["go", "graphql", "gqlgen", "redis"],
     title: "GraphQL Server",
     description:
-      "GraphQL server built using gqlgen. This is connected to several microservices with Redis caching and authorization middleware.",
-    tools: "gqlgen, Redis",
+      "GraphQL server connected to several microservices. Includes middleware for user authorization and Redis caching.",
     link: "https://github.com/dictyBase/graphql-server",
   },
   {
@@ -68,7 +67,6 @@ const professional = [
     title: "Authorization Server",
     description:
       "gRPC service that acts as an authorization server for generating and validating JWTs.",
-    tools: "gRPC, Protocol Buffer, Redis",
     link: "https://github.com/dictyBase/modware-auth",
   },
 ]
@@ -78,7 +76,7 @@ const side = [
     badges: ["nextjs", "tailwind", "typescript"],
     title: "Personal Website",
     description:
-      "The very website you are reading right now. I wanted to create a simple but fun website to host my content. Next.js and Tailwind CSS had both caught my interest so this gave me a good reason to experiment with both.",
+      "The very website you are reading right now. This is a place for me to experiment with different technologies and APIs.",
     link: "https://github.com/wildlifehexagon/erichartline.net",
   },
   {
@@ -87,6 +85,21 @@ const side = [
     description:
       "Node.js command line app for World Cup 2018 results and standings. I did this over a weekend to gain more experience building CLIs.",
     link: "https://github.com/wildlifehexagon/node-world-cup",
+  },
+]
+
+const presentations = [
+  {
+    badges: [
+      "mdx-deck",
+      "code surfer",
+      "react-testing-library",
+      "mock service worker",
+    ],
+    title: "RTL + MSW = !!!",
+    description:
+      "A presentation about frontend testing that I gave to the Hireology engineering team during their Engineering Talks event.",
+    link: "https://github.com/wildlifehexagon/rtl-deck",
   },
 ]
 
@@ -114,9 +127,24 @@ const Projects = () => {
       </section>
       <h2 className="text-3xl text-gray-600">Side Projects</h2>
       <Divider />
-      <section className="text-gray-600 body-font">
+      <section className="text-gray-600 body-font mb-10">
         <div className="p-2 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-5">
           {side.map((item) => (
+            <InfoCard
+              key={item.title}
+              badges={item.badges}
+              description={item.description}
+              link={item.link}
+              title={item.title}
+            />
+          ))}
+        </div>
+      </section>
+      <h2 className="text-3xl text-gray-600">Presentations</h2>
+      <Divider />
+      <section className="text-gray-600 body-font mb-10">
+        <div className="p-2 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-5">
+          {presentations.map((item) => (
             <InfoCard
               key={item.title}
               badges={item.badges}

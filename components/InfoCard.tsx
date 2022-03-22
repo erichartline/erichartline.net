@@ -15,7 +15,7 @@ type Props = {
 
 const InfoCard = ({ badges = [], description, image, link, title }: Props) => {
   return (
-    <div className="p-6 flex flex-col h-full bg-white rounded-lg overflow-hidden shadow-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-600">
+    <div className="p-6 flex flex-col h-full transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-95 bg-white rounded-lg overflow-hidden shadow-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-600">
       {image && <img className="w-full" src={image} alt={image} />}
       <h5 className="mb-2 text-2xl font-bold tracking-tight text-red-600 dark:text-white">
         <a href={link} target="_blank" rel="noopener noreferrer">
