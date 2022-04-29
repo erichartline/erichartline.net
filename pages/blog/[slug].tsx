@@ -28,9 +28,9 @@ const BlogPost = ({ frontmatter, markdownBody }: Props) => {
       <ProgressBar />
       <article>
         <h1 className="text-center text-3xl mb-3">{title}</h1>
-        <p className="text-center text-lg mb-3">
+        <div className="text-center text-lg mb-3">
           <em>{date}</em> · {readingTime} min read
-        </p>
+        </div>
         <Divider />
         <div>
           <ReactMarkdown className="prose lg:prose-xl prose-red mx-auto">
