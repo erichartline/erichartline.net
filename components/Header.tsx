@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react"
 import Link from "next/link"
 import { useTheme } from "next-themes"
 import { BsMoonFill, BsSunFill } from "react-icons/bs"
@@ -19,11 +18,7 @@ const links = [
 ]
 
 const Header = () => {
-  const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
-
-  useEffect(() => setMounted(true), [])
-  if (!mounted) return null
 
   return (
     <header className="text-gray-600 body-font">
