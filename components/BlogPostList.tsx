@@ -34,13 +34,15 @@ const BlogPostList = ({ posts }: Props) => {
                     <div className="md:flex-grow">
                       <h2 className="text-2xl font-medium text-gray-900 title-font mb-2">
                         <Link href={{ pathname: `/blog/${post.slug}` }}>
-                          <a>{frontmatter.title}</a>
+                          {frontmatter.title}
                         </Link>
                       </h2>
                       <p className="leading-relaxed">
                         {frontmatter.description}
                       </p>
-                      <Link href={{ pathname: `/blog/${post.slug}` }}>
+                      <Link
+                        href={{ pathname: `/blog/${post.slug}` }}
+                        legacyBehavior>
                         <a className="text-red-500 hover:text-red-700 inline-flex items-center mt-4">
                           Read &rarr;
                         </a>

@@ -23,7 +23,7 @@ const SocialIcons = () => {
   return (
     <div className="flex flex-row justify-center mt-2">
       {links.map((item) => (
-        <Link key={item.name} href={item.url}>
+        <Link key={item.name} href={item.url} legacyBehavior>
           <a className="mr-2">{item.icon}</a>
         </Link>
       ))}
