@@ -39,7 +39,7 @@ const BlogPost = ({ frontmatter, markdownBody }: Props) => {
         </div>
       </article>
       <div className="text-center mt-2">
-        <Link href="/blog">
+        <Link href="/blog" legacyBehavior>
           <a className="text-red-500 hover:text-red-700">
             &larr; Back to post list
           </a>
