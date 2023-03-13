@@ -11,7 +11,7 @@
   "dependencies": {
     "@vercel/analytics": "^0.1.8",
     "gray-matter": "^4.0.3",
-    "next": "^13.1.2",
+    "next": "^13.2.4",
     "next-themes": "^0.2.0",
     "raw-loader": "^4.0.2",
     "react": "^18.2.0",
