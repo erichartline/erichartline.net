@@ -9,7 +9,7 @@
     "export": "next export"
   },
   "dependencies": {
-    "@vercel/analytics": "^0.1.8",
+    "@vercel/analytics": "^1.0.1",
     "gray-matter": "^4.0.3",
     "next": "^13.2.4",
     "next-themes": "^0.2.0",
