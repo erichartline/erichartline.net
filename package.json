@@ -26,7 +26,7 @@
     "@types/node": "^20.4.2",
     "@types/react": "^18.2.11",
     "@types/react-dom": "^18.2.7",
-    "@types/webpack-env": "^1.18.1",
+    "@types/webpack-env": "^1.18.4",
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.29",
     "prettier": "^2.8.3",
