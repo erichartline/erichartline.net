@@ -1,3 +1,5 @@
+"use client"
+
 import useReadingProgress from "hooks/useReadingProgress"
 
 const ProgressBar = () => {

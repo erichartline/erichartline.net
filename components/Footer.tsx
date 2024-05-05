@@ -1,3 +1,5 @@
+"use client"
+
 import SocialIcons from "./SocialIcons"
 import NowPlaying from "./NowPlaying"
 
