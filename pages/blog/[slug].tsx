@@ -51,7 +51,7 @@ const BlogPost = ({ frontmatter, markdownBody }: Props) => {
 
 // get markdown file matching slug and return its data as props
 const getStaticProps: GetStaticProps = async (context) => {
-  const { slug } = context.params
+  const { slug } = context.params as { slug: string }
 
   const content = await import(`../../posts/${slug}.md`)
   const data = matter(content.default)
