@@ -1,18 +1,13 @@
 "use client"
 
 import Link from "next/link"
-import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa"
+import { FaGithub, FaLinkedin } from "react-icons/fa"
 
 const links = [
   {
     name: "GitHub",
-    url: "https://github.com/wildlifehexagon",
+    url: "https://github.com/erichartline",
     icon: <FaGithub size="1em" className="text-gray-800 dark:text-gray-200" />,
-  },
-  {
-    name: "Twitter",
-    url: "https://twitter.com/wildlifehexagon",
-    icon: <FaTwitter size="1em" className="text-blue-500" />,
   },
   {
     name: "LinkedIn",
