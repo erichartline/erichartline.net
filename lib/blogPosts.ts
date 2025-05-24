@@ -1,10 +1,11 @@
 import fs from "fs"
 import path from "path"
 import matter from "gray-matter"
+import { Post, Frontmatter } from "../types/blog"
 
 const postsDirectory = path.join(process.cwd(), "posts")
 
-export const getSortedPostsData = () => {
+export const getSortedPostsData = (): Post[] => {
   // get filenames under /posts
   const fileNames = fs.readdirSync(postsDirectory)
   const data = fileNames.map((fileName) => {
@@ -21,7 +22,7 @@ export const getSortedPostsData = () => {
     // Combine the data with the id
     return {
       slug,
-      frontmatter: document.data,
+      frontmatter: document.data as Frontmatter,
       markdownBody: document.content,
     }
   })

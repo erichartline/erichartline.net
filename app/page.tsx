@@ -5,35 +5,35 @@ import BlogPostList from "@/components/BlogPostList"
 async function getPosts() {
   const fs = require('fs');
   const path = require('path');
-  
+
   const postsDirectory = path.join(process.cwd(), 'posts');
   const filenames = fs.readdirSync(postsDirectory);
-  
+
   const posts = filenames.map(filename => {
     const filePath = path.join(postsDirectory, filename);
     const fileContents = fs.readFileSync(filePath, 'utf8');
-    
+
     const slug = filename.replace(/\.md$/, '');
     const document = matter(fileContents);
-    
+
     return {
       frontmatter: document.data,
       markdownBody: document.content,
       slug,
     };
   });
-  
+
   return posts;
 }
 
 export default async function Home() {
   const posts = await getPosts();
-  
+
   return (
-    <div>
+    <div className="text-gray-800 dark:text-gray-200">
       <div className="flex flex-row mt-4">
         <div>
-          <h1 className="text-4xl">Hi, I'm Eric.</h1>
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white">Hi, I'm Eric.</h1>
           <p className="my-4">
             I am a software engineer currently located in Chicago, IL. This is
             my home on the internet.
@@ -54,7 +54,7 @@ export default async function Home() {
           />
         </div>
       </div>
-      <h2 className="text-3xl text-gray-700 mt-16">Latest Blog Post</h2>
+      <h2 className="text-3xl text-gray-700 dark:text-gray-200 mt-16">Latest Blog Post</h2>
       <div className="my-4">
         <BlogPostList posts={posts.slice(-1)} />
       </div>

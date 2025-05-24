@@ -10,13 +10,13 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getPostBySlug(params.slug)
-  
+
   if (!post) {
     return {
       title: "Post Not Found",
     }
   }
-  
+
   return {
     title: post.frontmatter.title,
     description: post.frontmatter.description,
@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export async function generateStaticParams() {
   const posts = getSortedPostsData()
-  
+
   return posts.map((post) => ({
     slug: post.slug,
   }))
@@ -33,22 +33,22 @@ export async function generateStaticParams() {
 
 export default function BlogPost({ params }: Props) {
   const post = getPostBySlug(params.slug)
-  
+
   if (!post) {
-    return <div>Post not found</div>
+    return <div className="text-gray-800 dark:text-gray-200">Post not found</div>
   }
-  
+
   return (
     <article className="prose dark:prose-invert max-w-none">
-      <h1 className="text-3xl font-bold mb-4">{post.frontmatter.title}</h1>
+      <h1 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">{post.frontmatter.title}</h1>
       <div className="mb-4">
         <span className="text-red-600 dark:text-red-400 font-semibold">
           {post.frontmatter.category.toUpperCase()}
         </span>
-        <span className="mx-2">•</span>
+        <span className="mx-2 text-gray-500 dark:text-gray-400">•</span>
         <span className="text-gray-500 dark:text-gray-400">{post.frontmatter.date}</span>
       </div>
-      <ReactMarkdown>{post.markdownBody}</ReactMarkdown>
+      <ReactMarkdown className="text-gray-800 dark:text-gray-200">{post.markdownBody}</ReactMarkdown>
     </article>
   )
 }

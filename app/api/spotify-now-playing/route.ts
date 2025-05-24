@@ -20,6 +20,11 @@ export async function GET() {
   }
 
   const json = await response.json()
+
+  if (!json.item) {
+    return NextResponse.json({ isPlaying: false })
+  }
+
   const isPlaying = json.is_playing
   const title = json.item.name
   const artist = json.item.artists.map((item: Artist) => item.name).join(", ")

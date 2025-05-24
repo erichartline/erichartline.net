@@ -6,14 +6,14 @@ export const metadata = {
 
 export default function About() {
   return (
-    <div>
+    <div className="text-gray-800 dark:text-gray-200">
       <PageHeader
         title="About Me"
         subtitle="I'm Eric Hartline, web developer and fan of all things tech."
       />
       <div>
-        <h2 className="mt-4 text-xl">My Background</h2>
-        <hr className="border-0 bg-gray-400 h-px" />
+        <h2 className="mt-4 text-xl font-semibold text-gray-900 dark:text-white">My Background</h2>
+        <hr className="border-0 bg-gray-400 dark:bg-gray-600 h-px" />
         <p className="my-4">
           I've been working professionally as a web developer since 2017, but
           it was a long and winding road to get to that point. When I was
@@ -24,14 +24,14 @@ export default function About() {
           to how video games were made and ended up buying my first
           programming book --{" "}
           <a
-            className="text-red-500 hover:text-red-700"
+            className="text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300"
             href="https://books.google.com/books/about/Teach_Yourself_QBasic_in_21_Days.html?id=k4WFaB6AtBYC">
             Teach Yourself QBasic in 21 Days
           </a>
           . I wrote a few small programs, one of which was a Mad Libs game
           (rather amazingly, I found a{" "}
           <a
-            className="text-red-500 hover:text-red-700"
+            className="text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300"
             href="http://www.petesqbsite.com/reviews/misc/madlibs.html">
             copy of my game online
           </a>
@@ -53,13 +53,13 @@ export default function About() {
           Wordpress and static HTML/CSS websites for local businesses, then
           discovered{" "}
           <a
-            className="text-red-500 hover:text-red-700"
+            className="text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300"
             href="https://www.freecodecamp.org/">
             freeCodeCamp
           </a>{" "}
           and started working my way through its curriculum. I also joined the{" "}
           <a
-            className="text-red-500 hover:text-red-700"
+            className="text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300"
             href="https://chingu.io/">
             Chingu
           </a>{" "}
@@ -72,13 +72,13 @@ export default function About() {
           Currently, I am working at Hireology as a front end software
           engineer.
         </p>
-        <h2 className="mt-4 text-xl">Tech Skills</h2>
-        <hr className="border-0 bg-gray-400 h-px" />
+        <h2 className="mt-4 text-xl font-semibold text-gray-900 dark:text-white">Tech Skills</h2>
+        <hr className="border-0 bg-gray-400 dark:bg-gray-600 h-px" />
         <p className="my-4">
           <em>React, GraphQL, Go, Node.js, Docker, Kubernetes</em>
         </p>
-        <h2 className="mt-4 text-xl">Other Interests</h2>
-        <hr className="border-0 bg-gray-400 h-px" />
+        <h2 className="mt-4 text-xl font-semibold text-gray-900 dark:text-white">Other Interests</h2>
+        <hr className="border-0 bg-gray-400 dark:bg-gray-600 h-px" />
         <p className="my-4">
           <em>Music, movies, video games, sports, traveling</em>
         </p>

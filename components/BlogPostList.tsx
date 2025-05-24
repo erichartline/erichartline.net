@@ -1,15 +1,10 @@
 "use client"
 
 import Link from "next/link"
-import { Frontmatter } from "../types/blog"
+import { Post } from "../types/blog"
 
 type Props = {
-  posts: Array<{
-    /** URL slug */
-    slug: string
-    /** Frontmatter object from Markdown file */
-    frontmatter: Frontmatter
-  }>
+  posts: Post[]
 }
 
 const BlogPostList = ({ posts }: Props) => {
