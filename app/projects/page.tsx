@@ -1,7 +1,10 @@
-import Layout from "@components/Layout"
-import PageHeader from "@components/PageHeader"
-import InfoCard from "@components/InfoCard"
-import Divider from "@components/Divider"
+import PageHeader from "@/components/PageHeader"
+import InfoCard from "@/components/InfoCard"
+import Divider from "@/components/Divider"
+
+export const metadata = {
+  title: "Projects - Eric Hartline",
+}
 
 const professional = [
   {
@@ -103,9 +106,9 @@ const presentations = [
   },
 ]
 
-const Projects = () => {
+export default function Projects() {
   return (
-    <Layout pageTitle="Projects - Eric Hartline">
+    <div>
       <PageHeader
         title="Projects"
         subtitle="Select projects I've worked on in the last few years."
@@ -155,8 +158,6 @@ const Projects = () => {
           ))}
         </div>
       </section>
-    </Layout>
+    </div>
   )
 }
-
-export default Projects

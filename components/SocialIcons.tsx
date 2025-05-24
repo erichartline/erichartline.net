@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa"
 
@@ -23,8 +25,8 @@ const SocialIcons = () => {
   return (
     <div className="flex flex-row justify-center mt-2">
       {links.map((item) => (
-        <Link key={item.name} href={item.url} legacyBehavior>
-          <a className="mr-2">{item.icon}</a>
+        <Link key={item.name} href={item.url} className="mr-2">
+          {item.icon}
         </Link>
       ))}
     </div>

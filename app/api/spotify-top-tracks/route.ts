@@ -1,7 +1,7 @@
-import { getTopTracks } from "../../lib/spotify"
-import type { NextApiRequest, NextApiResponse } from "next"
+import { getTopTracks } from "@lib/spotify"
+import { NextResponse } from "next/server"
 
-export default async (_: NextApiRequest, res: NextApiResponse) => {
+export async function GET() {
   const response = await getTopTracks()
   const json = await response.json()
 
@@ -11,5 +11,5 @@ export default async (_: NextApiRequest, res: NextApiResponse) => {
     title: track.name,
   }))
 
-  return res.status(200).json({ tracks })
+  return NextResponse.json({ tracks })
 }
