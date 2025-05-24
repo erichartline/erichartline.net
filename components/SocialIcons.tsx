@@ -7,17 +7,17 @@ const links = [
   {
     name: "GitHub",
     url: "https://github.com/wildlifehexagon",
-    icon: <FaGithub size="1em" color="#181717" />,
+    icon: <FaGithub size="1em" className="text-gray-800 dark:text-gray-200" />,
   },
   {
     name: "Twitter",
     url: "https://twitter.com/wildlifehexagon",
-    icon: <FaTwitter size="1em" color="#1DA1F2" />,
+    icon: <FaTwitter size="1em" className="text-blue-500" />,
   },
   {
     name: "LinkedIn",
     url: "https://www.linkedin.com/in/erichartline/",
-    icon: <FaLinkedin size="1em" color="#0A66C2" />,
+    icon: <FaLinkedin size="1em" className="text-blue-700" />,
   },
 ]
 
