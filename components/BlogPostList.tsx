@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import { Frontmatter } from "../types/blog"
 
@@ -12,7 +14,7 @@ type Props = {
 
 const BlogPostList = ({ posts }: Props) => {
   return (
-    <section className="text-gray-600 body-font overflow-hidden">
+    <section className="text-gray-600 dark:text-gray-300 body-font overflow-hidden">
       <ul>
         {posts.map((post) => {
           const { frontmatter } = post
@@ -21,19 +23,19 @@ const BlogPostList = ({ posts }: Props) => {
             <li key={post.slug}>
               <div className="py-4">
                 {/* add borders between stacked children */}
-                <div className="-my-8 divide-y-2 divide-gray-100">
+                <div className="-my-8 divide-y-2 divide-gray-100 dark:divide-gray-800">
                   <div className="py-8 flex flex-wrap md:flex-nowrap">
                     <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-                      <span className="font-semibold title-font text-red-600">
+                      <span className="font-semibold title-font text-red-600 dark:text-red-400">
                         {frontmatter.category.toUpperCase()}
                       </span>
-                      <span className="mt-1 text-gray-500 text-sm">
+                      <span className="mt-1 text-gray-500 dark:text-gray-400 text-sm">
                         {frontmatter.date}
                       </span>
                     </div>
                     <div className="md:flex-grow">
-                      <h2 className="text-2xl font-medium text-gray-900 title-font mb-2">
-                        <Link href={{ pathname: `/blog/${post.slug}` }}>
+                      <h2 className="text-2xl font-medium text-gray-900 dark:text-white title-font mb-2">
+                        <Link href={`/blog/${post.slug}`} className="hover:underline">
                           {frontmatter.title}
                         </Link>
                       </h2>
@@ -41,11 +43,10 @@ const BlogPostList = ({ posts }: Props) => {
                         {frontmatter.description}
                       </p>
                       <Link
-                        href={{ pathname: `/blog/${post.slug}` }}
-                        legacyBehavior>
-                        <a className="text-red-500 hover:text-red-700 inline-flex items-center mt-4">
-                          Read &rarr;
-                        </a>
+                        href={`/blog/${post.slug}`}
+                        className="text-red-500 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 inline-flex items-center mt-4"
+                      >
+                        Read &rarr;
                       </Link>
                     </div>
                   </div>

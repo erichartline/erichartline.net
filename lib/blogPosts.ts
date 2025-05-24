@@ -30,3 +30,9 @@ export const getSortedPostsData = () => {
     b.frontmatter.date.localeCompare(a.frontmatter.date),
   )
 }
+
+export const getPostBySlug = (slug: string) => {
+  // Find the post with the matching slug
+  const posts = getSortedPostsData()
+  return posts.find((post) => post.slug === slug)
+}
