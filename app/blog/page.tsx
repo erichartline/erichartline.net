@@ -1,5 +1,8 @@
 import { getSortedPostsData } from "@/lib/blogPosts"
 import BlogPostList from "@/components/BlogPostList"
+import Divider from "@/components/Divider"
+import PageHeader from "@/components/PageHeader"
+
 
 export const metadata = {
   title: "Blog",
@@ -11,7 +14,12 @@ export default function Blog() {
 
   return (
     <div className="text-gray-800 dark:text-gray-200">
-      <h1 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Blog</h1>
+      <PageHeader
+        title="Blog"
+        subtitle="Thoughts, ideas, and experiences from my journey as a software engineer."
+      />
+      <h2 className="text-3xl text-gray-700 dark:text-gray-300 font-semibold hover:text-red-600 dark:hover:text-red-400 transition-colors duration-300">Latest Posts</h2>
+      <Divider />
       <BlogPostList posts={posts} />
     </div>
   )

@@ -113,10 +113,10 @@ export default function Projects() {
         title="Projects"
         subtitle="Select projects I've worked on in the last few years."
       />
-      <h2 className="text-3xl text-gray-700 dark:text-gray-300 font-semibold">Professional</h2>
+      <h2 className="text-3xl text-gray-700 dark:text-gray-300 font-semibold hover:text-red-600 dark:hover:text-red-400 transition-colors duration-300">Professional</h2>
       <Divider />
-      <section className="text-gray-600 dark:text-gray-300 body-font mb-10">
-        <div className="p-2 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-5">
+      <section className="text-gray-600 dark:text-gray-300 body-font mb-12">
+        <div className="p-2 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-6">
           {professional.map((item) => (
             <InfoCard
               key={item.title}
@@ -128,10 +128,10 @@ export default function Projects() {
           ))}
         </div>
       </section>
-      <h2 className="text-3xl text-gray-700 dark:text-gray-300 font-semibold">Side Projects</h2>
+      <h2 className="text-3xl text-gray-700 dark:text-gray-300 font-semibold hover:text-red-600 dark:hover:text-red-400 transition-colors duration-300">Side Projects</h2>
       <Divider />
-      <section className="text-gray-600 dark:text-gray-300 body-font mb-10">
-        <div className="p-2 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-5">
+      <section className="text-gray-600 dark:text-gray-300 body-font mb-12">
+        <div className="p-2 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-6">
           {side.map((item) => (
             <InfoCard
               key={item.title}
@@ -143,10 +143,10 @@ export default function Projects() {
           ))}
         </div>
       </section>
-      <h2 className="text-3xl text-gray-700 dark:text-gray-300 font-semibold">Presentations</h2>
+      <h2 className="text-3xl text-gray-700 dark:text-gray-300 font-semibold hover:text-red-600 dark:hover:text-red-400 transition-colors duration-300">Presentations</h2>
       <Divider />
-      <section className="text-gray-600 dark:text-gray-300 body-font mb-10">
-        <div className="p-2 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-5">
+      <section className="text-gray-600 dark:text-gray-300 body-font mb-12">
+        <div className="p-2 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-6">
           {presentations.map((item) => (
             <InfoCard
               key={item.title}
