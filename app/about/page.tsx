@@ -91,7 +91,7 @@ export default function About() {
           </div>
 
           <div className="flex flex-wrap gap-3">
-            {["React", "GraphQL", "Go", "Node.js", "Docker", "Kubernetes"].map((skill) => (
+            {["React", "Next.js", "GraphQL", "Go", "Node.js", "Docker", "Kubernetes"].map((skill) => (
               <span key={skill} className="px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-full text-gray-800 dark:text-gray-200">
                 {skill}
               </span>
